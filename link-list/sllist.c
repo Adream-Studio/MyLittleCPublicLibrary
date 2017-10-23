@@ -19,7 +19,7 @@ void sll_insert(Node **nextp, elem_type new_value){
 	/* init a new Node */
 	new = (Node*)malloc(sizeof(Node));
 	if( new == NULL ){
-		fprintf(stderr,"ERROR(sll_insert):failed to init a new Node !");
+		fprintf(stderr,"ERROR(sll_insert):failed to init a new Node !\n");
 		exit(EXIT_FAILURE);
 	}
 	new->value = new_value;
