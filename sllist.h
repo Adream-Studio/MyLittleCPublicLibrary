@@ -4,7 +4,7 @@
 	Version	:	v0.1
 
 	NOTICE:
-	Define the 'elem_type' in 'sll_elem_tepe.h' before use !!
+	Define the 'elem_type' in 'sllist_elem_type.h' before use !!
 	The 'elem_type' defaultly is 'int'
  */
 #ifndef _LLIST_H_
