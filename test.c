@@ -2,13 +2,14 @@
 	Author	:	Joe Nahm
 	Email	:	joenahm@yeah.net	
  */
-#include "sllist.h"
+#include "stack.h"
 
 int main(void){
-	SLList l1;
-	sll_init(&l1);
-	sll_insert(&l1,10); 
-	sll_destroy(l1);
+	Stack s1;
+	stack_init(&s1); 
+	stack_push(&s1,10);
+	int a = stack_getTop(&s1);	
+	stack_pop(&s1);
 
 	return 0;
 }
