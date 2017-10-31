@@ -3,12 +3,13 @@ A C public library consists of common-used little functions and data-structures.
 
 ## New Addition
 #### files:
-+ **stack**
+ **stack**
 - stack_elem_type.h
 - stack_storage.h
 - stack.h
 - stack.c
-+ **single-link-list**
+
+ **single-link-list**
 - sllist_elem_type.h
 - sllist.h
 - sllist.c
