@@ -5,6 +5,6 @@
 #ifndef _SLLIST_ELEM_TYPE_H_
 #define _SLLIST_ELEM_TYPE_H_
 
-#define elem_type int	//change it to the type you want
+typedef int elem_type;	//change it to the type you want
 
 #endif
