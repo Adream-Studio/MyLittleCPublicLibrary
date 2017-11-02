@@ -13,8 +13,9 @@ void sll_insert(Node **nextp, elem_type new_value){
 	register Node *new;
 
 	/* Find a right place for insertion */
-	while( (current=*nextp)!= NULL && current->value<new_value )
+	while( (current=*nextp)!= NULL && current->value<new_value ){
 		nextp = &current->next;
+	}
 
 	/* init a new Node */
 	new = (Node*)malloc(sizeof(Node));
