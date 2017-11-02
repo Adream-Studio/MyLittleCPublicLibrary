@@ -3,6 +3,12 @@ A C public library consists of common-used little functions and data-structures.
 
 ## New Addition
 #### files:
+**sequence-list** *Still Not Complete !*
+
+- sqlist_elem_type.h
+- sqlist.h
+- sqlist.c
+
  **stack**
 - stack_elem_type.h
 - stack_storage.h
@@ -14,6 +20,20 @@ A C public library consists of common-used little functions and data-structures.
 - sllist.h
 - sllist.c
 #### usage:
+**sequence-list:**
+1. include *sqlist.h*
+2. define a sequence-list by `SqList xx`
+3. use `sql_init(SqList *sql, int size)` to init a sequence-list
+4. use `sql_insert(SqList *sql, int index, elem_type value)` to insert data
+5. use `sql_get(SqList *sql, int index)` to get data
+6. use `sql_getLen(SqList *sql)` to get the length of the sequence-list
+7. use `sql_grow(SqList *sql, int size)` to make it bigger
+8. use `sql_destroy(SqList *sql)` to destroy it
+
+Check *sqlist.h* and *sqlist.c* for more details
+
+*Still Not Complete !*
+
 **stack:**
 1. include *stack.h*
 2. define a stack by `Stack xx`
@@ -35,5 +55,6 @@ Check *sllist.h* and *sllist.c* for more details.
 
 ## All Stuff
 **data-structure:**
+- sequence-list
 - single-link-list
 - stack
