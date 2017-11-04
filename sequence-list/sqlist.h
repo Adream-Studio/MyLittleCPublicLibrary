@@ -49,6 +49,8 @@ void sql_set(SqList *sql, int index, elem_type value);
 *  	then increase the length of sqlist */
 void sql_insert(SqList *sql, int index, elem_type value);
 
+void sql_print(SqList *sql, int length);
+
 int sql_grow(SqList *sql, int size);
 
 void sql_destroy(SqList *sql);
