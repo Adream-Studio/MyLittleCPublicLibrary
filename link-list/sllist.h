@@ -1,7 +1,7 @@
 /* 
 	Author	:	Joe Nahm
 	Email	:	joenahm@yeah.net
-	Version	:	v0.1
+	Version	:	v0.2
 
 	NOTICE:
 	Define the 'elem_type' in 'sllist_elem_type.h' before use !!
@@ -19,8 +19,9 @@ typedef struct NODE{
 	struct NODE *next;
 } Node,*SLList;
 
-void sll_init(SLList *sll_headp);
-void sll_insert(SLList *sll, elem_type new_value);
-void sll_destroy(SLList sll_headp);
+void sll_init(SLList *sll_headpp);
+void sll_insert(SLList sll, elem_type new_value);
+void sll_print(SLList sll);
+void sll_destroy(SLList sll);
 
 #endif
