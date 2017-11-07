@@ -2,6 +2,12 @@
 A C public library consists of common-used little functions and data-structures.
 
 ## New Addition
+**binary-tree**
+
+- bt_elem_type.h
+- bt.h
+- bt.c
+
 **sequence-list** *Still Not Complete !*
 
 - sqlist_elem_type.h
@@ -21,11 +27,26 @@ A C public library consists of common-used little functions and data-structures.
 
 ## All Stuff
 **data-structure:**
+- binary-tree
 - sequence-list
 - single-link-list
 - stack
 
 ## Usage
+**binary-tree:**
+1. include *bt.h*
+2. define a binary-tree by `BT xx`
+3. use `bt_init(BT *rootpp)` to init a binary-tree
+4. use `bt_create(BT *rootpp)` to create a binary-tree
+5. use <br>
+`bt_preOrderTraverse(BT rootp, void (*visit)(BTNode *nodep))`<br>
+ `bt_inOrderTraverse(BT rootp, void (*visit)(BTNode *nodep))`<br>
+  `bt_postOrderTraverse(BT rootp, void (*visit)(BTNode *nodep))`<br>
+  to traverse a binary-tree
+6. use `bt_destroy(BT tree)` to destroy a binary-tree
+
+Check *bt_elem_type.h* , *bt.h* and *bt.c* for more details
+
 **sequence-list:**
 1. include *sqlist.h*
 2. define a sequence-list by `SqList xx`
