@@ -96,8 +96,8 @@ void bt_inOrderTraverse(BT treeNode, void (*visit)(BTNode *node)){
 
 void bt_postOrderTraverse(BT treeNode, void(*visit)(BTNode *nodep)){
 	if( treeNode != NULL ){
-		bt_inOrderTraverse(treeNode->lChild,visit);
-		bt_inOrderTraverse(treeNode->rChild,visit);
+		bt_postOrderTraverse(treeNode->lChild,visit);
+		bt_postOrderTraverse(treeNode->rChild,visit);
 		(*visit)(treeNode);
 	}
 }
