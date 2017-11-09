@@ -8,6 +8,12 @@ A C public library consists of common-used little functions and data-structures.
 - bt.h
 - bt.c
 
+*threaded-binary-tree Still Not Complete !*
+
+- tbt_elem_type.h
+- tbt.h
+- tbt.c
+
 **sequence-list** *Still Not Complete !*
 
 - sqlist_elem_type.h
@@ -34,7 +40,7 @@ A C public library consists of common-used little functions and data-structures.
 
 ## Usage
 **binary-tree:**
-1. include *bt.h*
+1. include *bt.h* (for threaded-binary-tree, include *stack.h* as well)
 2. define a binary-tree by `BT xx`
 3. use `bt_init(BT *rootpp)` to init a binary-tree
 4. use `bt_create(BT *rootpp)` to create a binary-tree
@@ -45,7 +51,11 @@ A C public library consists of common-used little functions and data-structures.
   to traverse a binary-tree
 6. use `bt_destroy(BT tree)` to destroy a binary-tree
 
-Check *bt_elem_type.h* , *bt.h* and *bt.c* for more details
+*threaded-tree is all the same as the above, but :*
+
+7. use `tbt_inOrderThreading(TBT rootp, Stack *nodes)` to thread a binary-tree
+
+Check *bt_elem_type.h* , *bt.h* and *bt.c* (*tbt_elem_type.h* , *tbt.h* , *tbt.c*) for more details
 
 **sequence-list:**
 1. include *sqlist.h*
