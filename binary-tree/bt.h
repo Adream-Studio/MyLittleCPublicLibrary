@@ -3,9 +3,10 @@
 	Email	:	joenahm@yeah.net
 	Version	:	v0.1
 
+	binary-tree
+
 	NOTICE:
 	Define the 'bt_elem_type' in 'bt_elem_type.h' before use !!
-	The 'bt_elem_type' defaultly is 'int'
 
 	And the definition of binary-tree is also in 'bt_elem_type.h'
  */
