@@ -2,6 +2,12 @@
 A C public library consists of common-used little functions and data-structures.
 
 ## New Addition
+**sort algorithm**
+
+- bubble
+- insertion
+- selection
+
 **binary-tree**
 
 - bt_elem_type.h
@@ -37,6 +43,11 @@ A C public library consists of common-used little functions and data-structures.
 - sequence-list
 - single-link-list
 - stack
+
+**algorithm:**
+- bubble-sort
+- insertion-sort
+- selection-sort
 
 ## Usage
 **binary-tree:**
