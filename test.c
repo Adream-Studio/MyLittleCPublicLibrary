@@ -13,6 +13,7 @@ int main(void){
 	stack_init(&s1); 
 	stack_push(&s1,10);
 	int a = stack_getTop(&s1);	
+	stack_pop(&s1);
 	printf("%d\n", a);
 	putchar('\n');
 
@@ -20,10 +21,10 @@ int main(void){
 	SLList l1;
 	sll_init(&l1);
 	sll_insert(l1,11);
-	printf("%d\n", l1->value);
-	sll_destroy(l1);
-	stack_pop(&s1);
+	sll_insert(l1,12);
+	sll_print(l1);
 	putchar('\n');
+	sll_destroy(l1);
 
 	puts("sequence-list test:");
 	SqList sql1;
