@@ -5,13 +5,13 @@
 
 	threaded-binary-tree
 
-	"stack.h" needed !
+	"stack" needed !
 
 	NOTICE:
 	Change the definition of 'elem_type' in 'stack_elem_type.h' 
 	before using !!
 
-	Define the 'tbt_elem_type' in 'tbt_elem_type.h' before use !!
+	Define the 'tbt_elem_type' in 'tbt_elem_type.h' before using !!
 
 	And the definition of binary-tree is also in 'bt_elem_type.h'
  */
