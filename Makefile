@@ -1,4 +1,4 @@
-objects = test.o stack.o sllist.o sqlist.o bt.o dg.o
+objects = test.o stack.o sllist.o sqlist.o bt.o queue.o dg.o
 test : $(objects)
 	gcc -o test $(objects)
 
@@ -7,6 +7,9 @@ test.o : test.c ./stack/stack.h ./link-list/sllist.h
 
 dg.o : ./digraph/dg.c ./digraph/dg.h ./digraph/dg_elem_type.h
 	gcc -c -g ./digraph/dg.c
+
+queue.o : ./queue/queue.c ./queue/queue.h ./queue/queue_elem_type.h
+	gcc -c -g ./queue/queue.c
 
 bt.o : ./binary-tree/bt.c ./binary-tree/bt.h ./binary-tree/bt_elem_type.h
 	gcc -c -g ./binary-tree/bt.c

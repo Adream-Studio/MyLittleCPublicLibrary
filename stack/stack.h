@@ -4,7 +4,7 @@
 	Version	:	v0.1
 
 	NOTICE:
-	Define the 'elem_type' in 'stack_elem_type.h' before use !!
+	Define the 'elem_type' in 'stack_elem_type.h' before using !!
 	The 'elem_type' defaultly is 'int'
 
 	The storage mode of stack decides on head file 'stack_storage.h'

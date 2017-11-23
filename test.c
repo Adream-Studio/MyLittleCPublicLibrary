@@ -7,6 +7,7 @@
 #include "sequence-list/sqlist.h"
 #include "binary-tree/bt.h"
 #include "digraph/dg.h"
+#include "queue/queue.h"
 
 int main(void){
 	// puts("stack test:");
@@ -51,11 +52,23 @@ int main(void){
 	// bt_destroy(bt1);
 	// putchar('\n');
 
-	puts("digraph test:");
-	ALGraph alg;
-	alg_init(&alg);
-	alg_create(&alg);
-	alg_DFSTraverse(&alg,&visitPrint);
+	puts("queue test:");
+	Queue q1;
+	queue_init(&q1);
+	printf("%d\n", queue_isEmpty(&q1));
+	queue_in(&q1,10);
+	queue_in(&q1,11);
+	printf("%d\n", queue_isEmpty(&q1));
+	printf("%d\n", queue_getHead(&q1));
+	queue_out(&q1);
+	printf("%d\n", queue_getHead(&q1));
+	queue_destroy(&q1);
+
+	// puts("digraph test:");
+	// ALGraph alg;
+	// alg_init(&alg);
+	// alg_create(&alg);
+	// alg_DFSTraverse(&alg,&visitPrint);
 
 	return 0;
 }

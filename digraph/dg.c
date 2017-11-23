@@ -115,8 +115,13 @@ void alg_create(ALGraph *alGraph){
 			linkp = &((*linkp)->next);
 		}
 		EdgeNode *newNode = (EdgeNode*)malloc(sizeof(EdgeNode));
-		newNode->adjVert = endVert;
-		newNode->next = NULL;
+		if( newNode != NULL ){
+			newNode->adjVert = endVert;
+			newNode->next = NULL;
+		}else{
+			fprintf(stderr, "ERROR(alg_create): faild to create edge info !\n");
+			exit(EXIT_FAILURE);
+		}
 		*linkp = newNode;
 	}
 
