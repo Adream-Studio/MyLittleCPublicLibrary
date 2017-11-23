@@ -1,6 +1,11 @@
 # My Little C Public Liabraray
 A C public library consists of common-used little functions and data-structures.
 
+![](https://img.shields.io/badge/Data%20Structure-4-blue.svg)
+![](https://img.shields.io/badge/Algorithm-1-green.svg)
+[![](https://img.shields.io/badge/License-GPL%20v3-red.svg)](https://github.com/joenahm/MyLittleCPublicLiabrary/blob/master/LICENSE)
+![](https://img.shields.io/badge/C++-No-orange.svg)
+
 ## New Addition
 **sort algorithm**
 
