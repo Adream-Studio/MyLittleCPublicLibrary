@@ -38,7 +38,7 @@ void edgeAmtCheck(int *edgeAmt, int inEdgeAmt){
 }
 
 void vertIndexCheck(int *vertIndex, int vertAmt, int orderNum){
-	if( *vertIndex <0 && *vertIndex >= vertAmt ){
+	if( *vertIndex < 0 || *vertIndex >= vertAmt ){
 		fprintf(stderr, "WARNING(vertIndexCheck): invalid index for vertex : %d !\n", *vertIndex);
 		fflush(stderr);
 		printf("input the start vertex for edge [%d] : ", orderNum);
@@ -125,6 +125,44 @@ void alg_create(ALGraph *alGraph){
 	*/
 	for( i = 0 ; i < alGraph->vertAmt ; i++ ){
 		edgePrint(i,alGraph->adjList[i].firstEdge);
+	}
+}
+
+void visitPrint(ALGraph *alGraph, int index){
+	printf("%c ", alGraph->adjList[index].value);	
+	fflush(stdout);
+}
+
+int visitedArr[MAX_VERT_AMT];
+void (*visitFunc)(ALGraph *alGraph,int index);
+
+void alg_DFS(ALGraph *alGraph, int index){
+	visitedArr[index] = TRUE;
+	visitFunc(alGraph,index);
+
+	EdgeNode *currentEdge = alGraph->adjList[index].firstEdge;
+	while( currentEdge != NULL ){
+		register currentIndex = currentEdge->adjVert;
+
+		if( visitedArr[currentIndex] == FALSE ){
+			alg_DFS(alGraph,currentIndex);
+		}
+
+		currentEdge = currentEdge->next;
+	}
+}
+
+void alg_DFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index)){
+	int i;
+	for( i = 0 ; i < alGraph->vertAmt ; i++ ){
+		visitedArr[i] = FALSE;
+	}
+
+	visitFunc = visitPrint;
+	for( i = 0 ; i < alGraph->vertAmt ; i++ ){
+		if( visitedArr[i] == FALSE ){
+			alg_DFS(alGraph,i);
+		}
 	}
 }
 /* public */

@@ -45,7 +45,9 @@ typedef struct{
 
 void alg_init(ALGraph *alGraph);
 void alg_create(ALGraph *alGraph);
+void alg_DFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index));
 
 void getInputVal(dg_elem_type *buffer);
+void visitPrint(ALGraph *alGraph, int index);
 
 #endif

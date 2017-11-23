@@ -55,6 +55,7 @@ int main(void){
 	ALGraph alg;
 	alg_init(&alg);
 	alg_create(&alg);
+	alg_DFSTraverse(&alg,&visitPrint);
 
 	return 0;
 }
