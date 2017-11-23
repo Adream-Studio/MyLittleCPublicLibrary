@@ -16,11 +16,36 @@
  */
 #ifndef _DG_H__
 #define _DG_H_
+
+#include <stdio.h>
 #include <stdlib.h>
 #include "dg_elem_type.h"
-#include "../link-list/sllist.h"
+
+
+#define MAX_VERT_AMT 100
 
 #define TRUE 1
 #define FALSE 0
+
+typedef struct EDGENODE{
+	int adjVert;
+	struct EDGENODE *next;
+} EdgeNode;
+
+typedef struct VERTNODE{
+	dg_elem_type value;
+	EdgeNode *firstEdge;
+} VertNode;
+
+typedef struct{
+	int vertAmt;
+	int edgeAmt;
+	VertNode adjList[MAX_VERT_AMT];
+} ALGraph;
+
+void alg_init(ALGraph *alGraph);
+void alg_create(ALGraph *alGraph);
+
+void getInputVal(dg_elem_type *buffer);
 
 #endif
