@@ -170,4 +170,44 @@ void alg_DFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index
 		}
 	}
 }
+
+void alg_BFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index)){
+	int i;
+	for( i = 0 ; i < alGraph->vertAmt ; i++ ){
+		visitedArr[i] = FALSE;
+	}
+
+	Queue vertIndexQue;
+	queue_init(&vertIndexQue);
+
+	visitFunc = visitPrint;
+	for( i = 0 ; i < alGraph->vertAmt ; i++ ){
+		if( visitedArr[i] == FALSE ){
+			visitedArr[i] = TRUE;
+			visitFunc(alGraph,i);
+
+			queue_in(&vertIndexQue,i);
+
+			while( !queue_isEmpty(&vertIndexQue) ){
+				int currentIndex = queue_getHead(&vertIndexQue);
+				queue_out(&vertIndexQue);
+
+				EdgeNode *currentEdgeNode = alGraph->adjList[currentIndex].firstEdge;
+				while( currentEdgeNode != NULL ){
+					int index = currentEdgeNode->adjVert;
+					if( visitedArr[index] == FALSE ){
+						visitedArr[index] = TRUE;
+						visitFunc(alGraph,index);
+
+						queue_in(&vertIndexQue,index);
+					}
+
+					currentEdgeNode = currentEdgeNode->next;
+				}
+			}
+		}
+	}
+
+	queue_destroy(&vertIndexQue);
+}
 /* public */

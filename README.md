@@ -1,12 +1,24 @@
 # My Little C Public Liabraray
 A C public library consists of common-used little functions and data-structures.
 
-![](https://img.shields.io/badge/Data%20Structure-4-blue.svg)
+![](https://img.shields.io/badge/Data%20Structure-6-blue.svg)
 ![](https://img.shields.io/badge/Algorithm-1-green.svg)
 [![](https://img.shields.io/badge/License-GPL%20v3-red.svg)](https://github.com/joenahm/MyLittleCPublicLiabrary/blob/master/LICENSE)
 ![](https://img.shields.io/badge/C++-No-orange.svg)
 
 ## New Addition
+**digraph**
+
+- dg_elem_type.h
+- dg.h
+- dg.c
+
+**queue**
+
+- queue_elem_type.h
+- queue.h
+- queue.c
+
 **sort algorithm**
 
 - bubble
@@ -25,29 +37,14 @@ A C public library consists of common-used little functions and data-structures.
 - tbt.h
 - tbt.c
 
-**sequence-list** *Still Not Complete !*
-
-- sqlist_elem_type.h
-- sqlist.h
-- sqlist.c
-
- **stack**
-- stack_elem_type.h
-- stack_storage.h
-- stack.h
-- stack.c
-
- **single-link-list**
-- sllist_elem_type.h
-- sllist.h
-- sllist.c
-
 ## All Stuff
 **data-structure:**
+- digraph
 - binary-tree
+- stack
+- queue
 - sequence-list
 - single-link-list
-- stack
 
 **algorithm:**
 - bubble-sort
@@ -55,6 +52,16 @@ A C public library consists of common-used little functions and data-structures.
 - selection-sort
 
 ## Usage
+**digraph:**
+> based on **adjacency list**
+
+1. include *dg.h*
+2. define a digraph by `ALGraph xx`
+3. use `alg_init(ALGraph *alGraph)` to init a digraph
+4. use `alg_create(ALGraph *alGraph)` to create a digraph
+5. use `alg_DFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index))` to do depth first traversal with the digraph
+6. use `alg_BFSTraverse(ALGraph *alGraph, void (*visit)(ALGraph *alGraph, int index))` to do breadth first traversal with the digraph
+
 **binary-tree:**
 1. include *bt.h* (for threaded-binary-tree, include *stack.h* as well)
 2. define a binary-tree by `BT xx`
@@ -73,6 +80,37 @@ A C public library consists of common-used little functions and data-structures.
 
 Check *bt_elem_type.h* , *bt.h* and *bt.c* (*tbt_elem_type.h* , *tbt.h* , *tbt.c*) for more details
 
+**stack:**
+1. include *stack.h*
+2. define a stack by `Stack xx`
+3. use `stack_init(Stack *stackp)` to init a stack
+4. use `stack_push(Stack *stackp, elem_type value)` to push data into the stack
+5. use `stack_pop(Stack *stackp)` to pop data out of the stack
+6. use `stack_getTop(Stack *stackp)` to get the data in the top of the stack
+
+Check *stack.h*, *stack_storage.h* and *stack.c* for more details
+
+**queue:**
+1. include *queue.h*
+2. define a queue by `Queue xx` 
+3. use `queue_init(Queue *queuep)` to init a queue
+4. use `queuep_isEmpty(Queue *queuep)` to judge whether the queue is empty
+5. use `queue_in(Queue *queuep, queue_elem_type value)` to add data ino the tail of the queue
+6. use `queue_getHead(Queue *queuep)` to get the head element of the queue
+7. use `queue_out(Queue *queuep)` to bring the head element of the queue out
+8. use `queue_destroy(Queue *queuep)` to destroy the queue 
+
+Check *queue.h* and *queue.c* for more details
+
+**single-link-list:**
+1. include *sllist.h*
+2. define a single-link-list by `SLList xx`
+3. use `sll_init(SLList *sll_headp)` to init a single-link-list
+4. use `sll_insert(SLList *sll, elem_type new_value)` to insert data
+5. use `sll_destroy(SLList sll_headp)` to destroy a single-link-list
+
+Check *sllist.h* and *sllist.c* for more details.
+
 **sequence-list:**
 1. include *sqlist.h*
 2. define a sequence-list by `SqList xx`
@@ -86,22 +124,3 @@ Check *bt_elem_type.h* , *bt.h* and *bt.c* (*tbt_elem_type.h* , *tbt.h* , *tbt.c
 Check *sqlist.h* and *sqlist.c* for more details
 
 *Still Not Complete !*
-
-**stack:**
-1. include *stack.h*
-2. define a stack by `Stack xx`
-3. use `stack_init(Stack *stackp)` to init a stack
-4. use `stack_push(Stack *stackp, elem_type value)` to push data into the stack
-5. use `stack_pop(Stack *stackp)` to pop data out of the stack
-6. use `stack_getTop(Stack *stackp)` to get the data in the top of the stack
-
-Check *stack.h*, *stack_storage.h* and *stack.c* for more details
-
-**single-link-list:**
-1. include *sllist.h*
-2. define a single-link-list by `SLList xx`
-3. use `sll_init(SLList *sll_headp)` to init a single-link-list
-4. use `sll_insert(SLList *sll, elem_type new_value)` to insert data
-5. use `sll_destroy(SLList sll_headp)` to destroy a single-link-list
-
-Check *sllist.h* and *sllist.c* for more details.
