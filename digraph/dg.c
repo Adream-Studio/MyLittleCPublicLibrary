@@ -61,8 +61,10 @@ void edgePrint(int vertNum, EdgeNode *edge_node){
 
 /* public */
 void getInputVal(dg_elem_type *buffer){
-	fflush(stdin);
 	scanf("%c", buffer);
+	if( *buffer == '\n' ){
+		getInputVal(buffer);
+	}
 }
 
 void alg_init(ALGraph *alGraph){
@@ -147,7 +149,7 @@ void alg_DFS(ALGraph *alGraph, int index){
 
 	EdgeNode *currentEdge = alGraph->adjList[index].firstEdge;
 	while( currentEdge != NULL ){
-		register currentIndex = currentEdge->adjVert;
+		register int currentIndex = currentEdge->adjVert;
 
 		if( visitedArr[currentIndex] == FALSE ){
 			alg_DFS(alGraph,currentIndex);

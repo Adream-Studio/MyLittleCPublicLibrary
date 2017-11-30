@@ -69,6 +69,7 @@ int main(void){
 	alg_init(&alg);
 	alg_create(&alg);
 	alg_DFSTraverse(&alg,&visitPrint);
+	putchar('\n');
 
 	return 0;
 }
