@@ -149,7 +149,7 @@ void alg_DFS(ALGraph *alGraph, int index){
 
 	EdgeNode *currentEdge = alGraph->adjList[index].firstEdge;
 	while( currentEdge != NULL ){
-		register currentIndex = currentEdge->adjVert;
+		register int currentIndex = currentEdge->adjVert;
 
 		if( visitedArr[currentIndex] == FALSE ){
 			alg_DFS(alGraph,currentIndex);
