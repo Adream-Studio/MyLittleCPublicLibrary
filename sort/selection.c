@@ -46,7 +46,6 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
 
 int main(int argc, char const *argv[]){
 	int a[99999];
-	showSort(a,99999,&selectionSort);
-	//5.9s costs
+	showSort(a,99999,selectionSort);
 	return 0;
 }

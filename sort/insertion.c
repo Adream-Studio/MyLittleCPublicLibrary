@@ -40,13 +40,12 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
 	}
 	// print(arr,n);
 	sort(arr,n);
-	// print(arr,n);
-	putchar('O');
+	//print(arr,n);
+	putchar('0');
 }
 
 int main(int argc, char const *argv[]){
 	int a[99999];
-	showSort(a,99999,&insertionSort);
-	//8.3s costs
+	showSort(a,99999,insertionSort);
 	return 0;
 }
