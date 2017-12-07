@@ -7,6 +7,11 @@ A C public library consists of common-used little functions and data-structures.
 ![](https://img.shields.io/badge/C++-No-orange.svg)
 
 ## New Addition
+**sort algorithm**
+
+- quick
+- binary insertion
+
 **kmp algorithm**
 - kmp
 
@@ -50,6 +55,8 @@ A C public library consists of common-used little functions and data-structures.
 - single-link-list
 
 **algorithm:**
+- quick-sort
+- binaryInsertion-sort
 - bubble-sort
 - insertion-sort
 - selection-sort
