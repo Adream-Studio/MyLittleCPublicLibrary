@@ -2,6 +2,8 @@
 	快速排序(递增):
 */
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 void print(int *arr, int n){
 	int i;
@@ -13,20 +15,22 @@ void print(int *arr, int n){
 
 void quickSort(int *arr, int left, int right){
 	if( left < right ){
-		register int key = arr[left];
 		register int low = left;
 		register int high = right;
+
+		register int index = rand()%(right-left)+left;
 		while( low < high ){
-			while( low < high && arr[high] > key ){
+			register int temp;
+			while( low < high && arr[high] >= arr[index] ){
 				high--;
 			}
-			arr[low] = arr[high];
-			while( low < high && arr[low] < key ){
+			temp = arr[high];
+			while( low < high && arr[low] <= arr[index] ){
 				low++;
 			}
 			arr[high] = arr[low];
+			arr[low] = temp;
 		}
-		arr[low] = key;
 
 		quickSort(arr,left,low-1);
 		quickSort(arr,low+1,right);
@@ -47,7 +51,8 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int left, int right)){
 }
 
 int main(int argc, char const *argv[]){
-	int a[9999];
-	showSort(a,9999,quickSort);//on Windows be careful of stack overflow
+	int a[99999];
+	srand(time(NULL)); //call it before using !!
+	showSort(a,99999,quickSort);
 	return 0;
 }
