@@ -17,11 +17,11 @@ void quickSort(int *arr, int left, int right){
 		register int low = left;
 		register int high = right;
 		while( low < high ){
-			while( low < high && arr[high] >= key ){
+			while( low < high && arr[high] > key ){
 				high--;
 			}
 			arr[low] = arr[high];
-			while( low < high && arr[low] <= key ){
+			while( low < high && arr[low] < key ){
 				low++;
 			}
 			arr[high] = arr[low];
@@ -40,14 +40,14 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int left, int right)){
 	for( i = n-1 ; i >= 0 ; i-- ){
 		arr[n-1-i] = i;
 	}
-	// print(arr,n);
+	//print(arr,n);
 	sort(arr,0,n-1);
 	//print(arr,n);
 	putchar('O');
 }
 
 int main(int argc, char const *argv[]){
-	int a[99999];
-	showSort(a,99999,quickSort);
+	int a[9999];
+	showSort(a,9999,quickSort);//on Windows be careful of stack overflow
 	return 0;
 }
