@@ -12,7 +12,7 @@ void print(int *arr, int n){
 }
 
 void binaryInsertionSort(int *arr, int n){
-	register int i,j;
+	register int i;
 	register int key;
 	for( i = 1 ; i < n ; i++ ){
 		if( arr[i] < arr[i-1] ){
