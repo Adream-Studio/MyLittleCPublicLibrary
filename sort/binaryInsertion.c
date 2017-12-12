@@ -13,32 +13,29 @@ void print(int *arr, int n){
 
 void binaryInsertionSort(int *arr, int n){
 	register int i;
-	register int key;
 	for( i = 1 ; i < n ; i++ ){
-		if( arr[i] < arr[i-1] ){
-			// putchar('\n');
-			key = arr[i];
+		// putchar('\n');
+		register int key = arr[i];
 
-			int low = 0;
-			int high = i - 1;
-			while( low <= high ){
-				int mid = (low+high)/2;
-				if( arr[mid] < key ){
-					low = mid+1;
-				}else{
-					high = mid-1;
-				}
+		int low = 0;
+		int high = i - 1;
+		while( low <= high ){
+			int mid = (low+high)/2;
+			if( arr[mid] < key ){
+				low = mid+1;
+			}else{
+				high = mid-1;
 			}
-			
-			int j;
-			for( j = i-1 ; j > high ; j-- ){
-				arr[j+1] = arr[j];
-			}
-
-			arr[high+1] = key;
-			// print(arr,n);
 		}
-	}
+		
+		int j;
+		for( j = i-1 ; j > high ; j-- ){
+			arr[j+1] = arr[j];
+		}
+
+		arr[high+1] = key;
+		//print(arr,n);
+		}
 }
 
 void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
