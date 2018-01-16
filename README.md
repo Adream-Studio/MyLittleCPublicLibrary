@@ -1,4 +1,4 @@
-# My Little C Public Liabraray
+# My Little C Public Libraray
 A C public library consists of common-used little functions and data-structures.
 
 ![](https://img.shields.io/badge/Data%20Structure-6-blue.svg)
@@ -9,41 +9,7 @@ A C public library consists of common-used little functions and data-structures.
 ## New Addition
 **sort algorithm**
 
-- quick
-- binary insertion
-
-**kmp algorithm**
-- kmp
-
-**digraph**
-
-- dg_elem_type.h
-- dg.h
-- dg.c
-
-**queue**
-
-- queue_elem_type.h
-- queue.h
-- queue.c
-
-**sort algorithm**
-
-- bubble
-- insertion
-- selection
-
-**binary-tree**
-
-- bt_elem_type.h
-- bt.h
-- bt.c
-
-*threaded-binary-tree Still Not Complete !*
-
-- tbt_elem_type.h
-- tbt.h
-- tbt.c
+- merge
 
 ## All Stuff
 **data-structure:**
@@ -55,6 +21,7 @@ A C public library consists of common-used little functions and data-structures.
 - single-link-list
 
 **algorithm:**
+- merge-sort
 - quick-sort
 - binaryInsertion-sort
 - bubble-sort
