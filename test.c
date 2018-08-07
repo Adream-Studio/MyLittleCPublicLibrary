@@ -10,8 +10,6 @@
 #include "queue/queue.h"
 
 int main(void){
-	puts("测试更改！");
-
 	puts("stack test:");
 	Stack s1;
 	stack_init(&s1);
