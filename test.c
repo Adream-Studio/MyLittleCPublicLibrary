@@ -1,6 +1,6 @@
-/* 
+/*
 	Author	:	Joe Nahm
-	Email	:	joenahm@yeah.net	
+	Email	:	joenahm@yeah.net
  */
 #include "stack/stack.h"
 #include "link-list/sllist.h"
@@ -10,11 +10,13 @@
 #include "queue/queue.h"
 
 int main(void){
+	puts("测试更改！");
+
 	puts("stack test:");
 	Stack s1;
-	stack_init(&s1); 
+	stack_init(&s1);
 	stack_push(&s1,10);
-	int a = stack_getTop(&s1);	
+	int a = stack_getTop(&s1);
 	stack_pop(&s1);
 	printf("%d\n", a);
 	putchar('\n');
